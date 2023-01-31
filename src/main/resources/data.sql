@@ -24,13 +24,15 @@ INSERT INTO authorities (name, endpoint) values ('Authority_PartialUpdate', 'PAT
 INSERT INTO authorities (name, endpoint) values ('AuthorityByUser_Read', 'GET:/api/authority/byuser/{id}/');
 
 // De aqui NO se pone 
-INSERT INTO authorities (name, endpoint) values ('Customer_Write', 'POST:/api/cliente/');
+// Cliente
+INSERT INTO authorities (name, endpoint) values ('Plannings_Write', 'POST:/api/cliente/');
 INSERT INTO authorities (name, endpoint) values ('Customer_Read', 'GET:/api/cliente/');
 INSERT INTO authorities (name, endpoint) values ('CustomerById_Read', 'GET:/api/cliente/{id}/');
 INSERT INTO authorities (name, endpoint) values ('Customer_Delete', 'DELETE:/api/cliente/{id}');
 INSERT INTO authorities (name, endpoint) values ('Customer_Update', 'PUT:/api/cliente/{id}');
 INSERT INTO authorities (name, endpoint) values ('Customer_PartialUpdate', 'PATCH:/api/cliente/{id}');
 
+// Producto
 INSERT INTO authorities (name, endpoint) values ('Product_Write', 'POST:/api/product/');
 INSERT INTO authorities (name, endpoint) values ('Product_Read', 'GET:/api/product/');
 INSERT INTO authorities (name, endpoint) values ('ProductById_Read', 'GET:/api/product/{id}/');
@@ -45,8 +47,9 @@ INSERT INTO authorities (name, endpoint) values ('Invoice_Delete', 'DELETE:/api/
 INSERT INTO authorities (name, endpoint) values ('Invoice_Update', 'PUT:/api/factura/{id}/');
 INSERT INTO authorities (name, endpoint) values ('Invoice_PartialUpdate', 'PATCH:/api/factura/{id}/');
 INSERT INTO authorities (name, endpoint) values ('InvoicePdf_Read', 'GET:/api/factura/pdf/{id}/');
+// ***************************************************************************
 
-
+// Roles
 INSERT INTO roles (name) values ('ROLE_ADMIN');
 INSERT INTO roles (name) values ('ROLE_ASESOR');
 INSERT INTO roles (name) values ('ROLE_FACTURADOR');
