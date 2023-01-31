@@ -23,14 +23,22 @@ INSERT INTO authorities (name, endpoint) values ('Authority_Update', 'PUT:/api/a
 INSERT INTO authorities (name, endpoint) values ('Authority_PartialUpdate', 'PATCH:/api/authority/{id}/');
 INSERT INTO authorities (name, endpoint) values ('AuthorityByUser_Read', 'GET:/api/authority/byuser/{id}/');
 
-// De aqui NO se pone 
-// Cliente
-INSERT INTO authorities (name, endpoint) values ('Plannings_Write', 'POST:/api/cliente/');
-INSERT INTO authorities (name, endpoint) values ('Customer_Read', 'GET:/api/cliente/');
-INSERT INTO authorities (name, endpoint) values ('CustomerById_Read', 'GET:/api/cliente/{id}/');
-INSERT INTO authorities (name, endpoint) values ('Customer_Delete', 'DELETE:/api/cliente/{id}');
-INSERT INTO authorities (name, endpoint) values ('Customer_Update', 'PUT:/api/cliente/{id}');
-INSERT INTO authorities (name, endpoint) values ('Customer_PartialUpdate', 'PATCH:/api/cliente/{id}');
+
+// Asignacion de fases
+INSERT INTO authorities (name, endpoint) values ('Assignament_Write', 'POST:/api/assignament/');
+INSERT INTO authorities (name, endpoint) values ('Assignament_Read', 'GET:/api/assignament/');
+INSERT INTO authorities (name, endpoint) values ('AssignamentById_Read', 'GET:/api/assignament/{id}/');
+INSERT INTO authorities (name, endpoint) values ('Assignament_Delete', 'DELETE:/api/assignament/{id}');
+INSERT INTO authorities (name, endpoint) values ('Assignament_Update', 'PUT:/api/assignament/{id}');
+INSERT INTO authorities (name, endpoint) values ('Assignament_PartialUpdate', 'PATCH:/api/assignament/{id}');
+
+// Fases
+INSERT INTO authorities (name, endpoint) values ('Event_Write', 'POST:/api/event/');
+INSERT INTO authorities (name, endpoint) values ('Event_Read', 'GET:/api/event/');
+INSERT INTO authorities (name, endpoint) values ('EventById_Read', 'GET:/api/event/{id}/');
+INSERT INTO authorities (name, endpoint) values ('Event_Delete', 'DELETE:/api/event/{id}');
+INSERT INTO authorities (name, endpoint) values ('Event_Update', 'PUT:/api/event/{id}');
+INSERT INTO authorities (name, endpoint) values ('Event_PartialUpdate', 'PATCH:/api/event/{id}');
 
 // Producto
 INSERT INTO authorities (name, endpoint) values ('Product_Write', 'POST:/api/product/');
@@ -51,8 +59,9 @@ INSERT INTO authorities (name, endpoint) values ('InvoicePdf_Read', 'GET:/api/fa
 
 // Roles
 INSERT INTO roles (name) values ('ROLE_ADMIN');
-INSERT INTO roles (name) values ('ROLE_ASESOR');
-INSERT INTO roles (name) values ('ROLE_FACTURADOR');
+INSERT INTO roles (name) values ('ROLE_COORDINADOR_UIC');
+INSERT INTO roles (name) values ('ROLE_UIC_CARRERA');
+INSERT INTO roles (name) values ('ROLE_ESTUDIANTE');
 
 INSERT INTO roles_authorities (role_id, authority_id) (select (SELECT id FROM roles where name = 'ROLE_ADMIN')  AS role_id, e.id from authorities e );
 
